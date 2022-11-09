@@ -79,7 +79,7 @@ public class Main {
                             System.out.println(menu4);
                             int op4 = teclado.nextInt();
                             teclado.nextLine();
-                            while(op4 < 6 && op4 >= 1){
+                            while(op4 < 7 && op4 >= 1){
                                 switch(op4){
                                     case 1:{
                                         op1 = 0;
@@ -135,6 +135,74 @@ public class Main {
                                         }
                                     }
                                 }
+                            }
+                        }
+                        case 4:{
+                            String menu5 = "\n--Modo Reproduccion--\nElija una de las opciones\n1. Apagar radio\n2. Cambiar modo\n3. Elegir lista de reproduccion\n4. Cambiar cancion\n5. Escuchar cancion";
+                            System.out.println(menu5);
+                            int op5 = teclado.nextInt();
+                            teclado.nextLine(); 
+                            while(op5 < 6 && op5>=1){
+                                switch(op5){
+                                    case 1:{
+                                        op1 = 0;
+                                        op2 = 0;
+                                        op5 = 0;
+                                    }
+                                    case 2:{
+                                        op2 = 0;
+                                        op5 = 0;
+                                    }
+                                    case 3:{
+                                        //System.out.print("Playlist 1")
+                                        //for Cancion cancion | Playlist 1
+                                            //System.out.print(cancion.getNombre())
+                                        //Seria algo asi para todas las playlists que hagamos
+                                        //System.out.print("Que numero de playlist desea elegir: ")
+                                        //String pl = teclado.nextInt()
+                                        //teclado.nextLine()
+                                        //switch(pl)
+                                            //Asignarle a un array vacio la playlist que escogio ya sea con un atributo extra en la clase de Cancion o aca
+                                            //Y asignarle a una variable vacia los datos de la primera cancion que este en dicha playlist y no se si aparte el numero de cancion para poder hacer lo de avanzar y retroceder
+                                            //playlistactual = Playlistx
+                                            //cancionactual = Playlistx.pos[0].getNombre()
+                                            //numcancion = 0
+                                            //Algo asi 
+                                    }
+                                    case 4:{
+                                        System.out.println("Desea avanzar (0) o retroceder (1) la cancion: ");
+                                        int canc = teclado.nextInt();
+                                        if(canc == 0){
+                                            //if numcancion == playlistactual.length()-1
+                                                //numcancion = 0
+                                                //cancionactual = playlistactual.pos[0].getNombre()
+                                            //numcancion++
+                                            //cancionactual = playlistactual.posp[numcancion].getNombre()
+                                            //System.out.print("->\n" + cancionactual)
+                                        }
+                                        if(canc == 1){
+                                            //if numcancion == 0
+                                                //numcancion = playlistactual.length()-1
+                                                //cancionactual = playlistactual.pos[numcancion].getNombre()
+                                            //numcancion = numcancion - 1
+                                            //cancionactual = playlistactual.pos[numcancion].getNombre()
+                                            //System.out.print("<-\n" + cancionactual)
+                                        }
+                                    }
+                                    case 5:{
+                                        System.out.println("Escuchando: ");
+                                        //System.out.print(playlistactual.pos[numcancion])
+                                    }
+                                }
+                            }
+                        }
+                        case 5:{
+                            String menu6 = "\n--Modo Productividad--\nElija una de las opciones\n1. Apagar radio\n2. Cambiar modo\n3. Elegir lista de reproduccion\n4. Cambiar cancion\n5. Escuchar cancion";
+                            System.out.println(menu6);
+                            int op6 = teclado.nextInt();
+                            teclado.nextLine();
+                            while(op6==1){
+                                //Lo que vaya de los de las tarjetas de presentacion que no entendi
                             }
                         }
                     }
