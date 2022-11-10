@@ -1,7 +1,16 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+        //ArrayList<Musica> playlist1 = new ArrayList<Musica>
+        //
+        //
+        //
+        //
+        //
+        //
+        //
         Scanner teclado = new Scanner(System.in);
         String menu1 = "\nBienvenido encienda la radio para acceder a las demas opciones\n1. Encender radio ";
         int op1 = 0;
@@ -82,6 +91,7 @@ public class Main {
                                     }
                                 }
                             }
+                            break;
                         }
                         case 3:{
                             String menu4 = "\n--Modo Telefono--\nElija una de las opciones\n1. Apagar radio\n2. Cambiar modo\n3. Cambiar volumen\n4. Mostrar contactos\n5. Llamar contacto\n6. Llamar ultimo contacto";
@@ -149,6 +159,7 @@ public class Main {
                                     }
                                 }
                             }
+                            break;
                         }
                         case 4:{
                             String menu5 = "\n--Modo Reproduccion--\nElija una de las opciones\n1. Apagar radio\n2. Cambiar modo\n3. Elegir lista de reproduccion\n4. Cambiar cancion\n5. Escuchar cancion";
@@ -210,6 +221,7 @@ public class Main {
                                     }
                                 }
                             }
+                            break;
                         }
                         case 5:{
                             String menu6 = "\n--Modo Productividad--\nElija una de las opciones\n1. Apagar radio\n2. Cambiar modo\n3. Elegir lista de reproduccion\n4. Cambiar cancion\n5. Escuchar cancion";
@@ -219,6 +231,7 @@ public class Main {
                             while(op6==1){
                                 //Lo que vaya de los de las tarjetas de presentacion que no entendi
                             }
+                            break;
                         }
                     }
                 }
