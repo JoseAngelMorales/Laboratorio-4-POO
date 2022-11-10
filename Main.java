@@ -11,6 +11,7 @@ public class Main {
         //
         //
         //
+        Radio miRadio = new Radio();
         Scanner teclado = new Scanner(System.in);
         String menu1 = "\nBienvenido encienda la radio para acceder a las demas opciones\n1. Encender radio ";
         int op1 = 0;
@@ -62,7 +63,7 @@ public class Main {
                                         break;
                                     }
                                     case 4:{
-                                        //Radio.FM/AM() (si el modulo no tiene if para ver si ya esta en am o fm ponerlo aca)
+                                        System.out.println(miRadio.cambiarFmAm());
                                         break;
                                     }
                                     case 5:{ //Lo mismo que para el de volumen
@@ -90,6 +91,7 @@ public class Main {
                                         break;
                                     }
                                 }
+                                op3 = 0;
                             }
                             break;
                         }
@@ -158,6 +160,7 @@ public class Main {
                                         }
                                     }
                                 }
+                                op4 = 0;
                             }
                             break;
                         }
@@ -220,6 +223,8 @@ public class Main {
                                         //System.out.print(playlistactual.pos[numcancion])
                                     }
                                 }
+                                
+                                op5 = 0;
                             }
                             break;
                         }
@@ -230,6 +235,8 @@ public class Main {
                             teclado.nextLine();
                             while(op6==1){
                                 //Lo que vaya de los de las tarjetas de presentacion que no entendi
+                                
+                                op6 = 0;
                             }
                             break;
                         }

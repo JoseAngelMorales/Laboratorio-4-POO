@@ -1,7 +1,30 @@
 public class Radio implements Acciones {
+
+  String frecuencia;
+
+  Radio(String frecuencia) {
+    this.frecuencia = frecuencia;
+  }
+
+  Radio() {
+    this.frecuencia = "FM";
+  }
+
+  public void setFrecuencia(String frecuencia) {
+    this.frecuencia = frecuencia;
+  }
+
+  public String getFrecuencia() {
+    return this.frecuencia;
+  }
   //Modo radio
   public String cambiarFmAm() {
-    return "";
+    if(this.frecuencia.equals("FM")) {
+      setFrecuencia("AM");
+    } else if (this.frecuencia.equals("AM")){
+      setFrecuencia("FM");
+    }
+    return "La frecuencia ahora cambió a " + this.getFrecuencia();
   }
   public String cambiarEmisora(String operador) {
     return "";
