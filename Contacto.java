@@ -21,6 +21,27 @@ public class Contacto {
     return this.listaContactos;
   }
 
+  public String getNombre() {
+    return this.nombre;
+  }
+
+  public String getNumero() {
+    return this.numero;
+  }
+
+  public void setNombre(String nombre) {
+    this.nombre = nombre;
+  }
+
+  public void setNumero(String numero) {
+    this.numero = numero;
+  }
+
+  public String getDatosContacto () {
+    return "contacto: " + this.getNombre() + "\n" + 
+            "número: " + this.getNumero();
+  }
+
   public void llenarListaContactos() {
     this.listaContactos.add(new Contacto("Contacto 1", "12345678"));
     this.listaContactos.add(new Contacto("Contacto 2", "02345678"));
