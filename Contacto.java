@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 
-java.util;
-
 public class Contacto {
   private String nombre;
   private String numero;
