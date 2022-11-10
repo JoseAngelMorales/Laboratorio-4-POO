@@ -19,6 +19,7 @@ public class Main {
                         case 1:{
                             op1 = 0;
                             op2 = 0;
+                            break;
                         }
                         case 2:{
                             String menu3 = "\n--Modo Radio--\nElija una de las opciones\n1. Apagar radio\n2. Cambiar modo\n3. Cambiar volumen\n4. Cambiar FM/AM\n5. Cambiar emisora\n6. Guardar emisora\n7. Cargar emisora";
@@ -31,10 +32,12 @@ public class Main {
                                         op1 = 0;
                                         op2 = 0;
                                         op3 = 0;
+                                        break;
                                     }
                                     case 2:{
                                         op2 = 0;
                                         op3 = 0;
+                                        break;
                                     }
                                     case 3:{ //Todo esto podria ir en el metodo de cambiar volumen pero lo pongo aqui para tener algo de referencia
                                         System.out.println("Desea aumentar (0) o disminuir (1) el volumen");
@@ -47,9 +50,11 @@ public class Main {
                                         if(op31 == 0){
                                             //Radio.SetVolumen(getVolumen()-1)
                                             }
+                                        break;
                                     }
                                     case 4:{
                                         //Radio.FM/AM() (si el modulo no tiene if para ver si ya esta en am o fm ponerlo aca)
+                                        break;
                                     }
                                     case 5:{ //Lo mismo que para el de volumen
                                         System.out.println("Desea aumentar (0) o disminuir (1) la emisora");
@@ -57,19 +62,23 @@ public class Main {
                                         op32 = teclado.nextInt();
                                         teclado.nextLine();
                                         if(op32 == 0){
-                                        //Radio.SetVolumen(getVolumen()+1)
+                                            //Radio.SetVolumen(getVolumen()+1)
                                             }
                                         if(op32 == 0){
                                             //Radio.SetVolumen(getVolumen()-1)
                                             }
+                                        break;
                                     }
                                     case 6:{
                                         //ArrayList<int>.append(getEmisora()) Agregar la emisora actual al array que hay que tener de emisoras
+                                        break;
                                     }
                                     case 7:{
                                         System.out.println("Que emisora desea cargar: ");
                                         int emi = teclado.nextInt();
+                                        teclado.nextLine();
                                         //Radio.SetEmisora(emi)
+                                        break;
                                     }
                                 }
                             }
@@ -85,10 +94,12 @@ public class Main {
                                         op1 = 0;
                                         op2 = 0;
                                         op4 = 0;
+                                        break;
                                     }
                                     case 2:{
                                         op2 = 0;
                                         op4 = 0;
+                                        break;
                                     } 
                                     case 3:{//Todo esto podria ir en el metodo de cambiar volumen pero lo pongo aqui para tener algo de referencia
                                         System.out.println("Desea aumentar (0) o disminuir (1) el volumen");
@@ -101,10 +112,12 @@ public class Main {
                                         if(op41 == 0){
                                             //Radio.SetVolumen(getVolumen()-1)
                                         }
+                                        break;
                                     }
                                     case 4:{
                                         //for Contactos contacto | ArrayList<Contactos>
-                                            //print contacto 
+                                            //print contacto
+                                        break;
                                     }
                                     case 5:{
                                         System.out.println("Numero del contacto que desea llamar: ");
@@ -148,10 +161,12 @@ public class Main {
                                         op1 = 0;
                                         op2 = 0;
                                         op5 = 0;
+                                        break;
                                     }
                                     case 2:{
                                         op2 = 0;
                                         op5 = 0;
+                                        break;
                                     }
                                     case 3:{
                                         //System.out.print("Playlist 1")
