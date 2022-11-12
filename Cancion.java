@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Cancion {
   public String nombre;
   public String artista;
-  public String anio;
+  public String duracion;
   public String genero;
   public ArrayList<Cancion> listaReproduccionRock;
   public ArrayList<Cancion> listaReproduccionPop;
@@ -12,17 +12,17 @@ public class Cancion {
   public Cancion() {
     this.nombre = "";
     this.artista = "";
-    this.anio = "";
+    this.duracion = "";
     this.genero = "";
     this.listaReproduccionRock = new ArrayList<Cancion>();
     this.listaReproduccionPop = new ArrayList<Cancion>();
     this.listaReproduccionClasica = new ArrayList<Cancion>();
   }
 
-  public Cancion(String nombre, String artista, String anio, String genero) {
+  public Cancion(String nombre, String artista, String duracion, String genero) {
     this.nombre = nombre;
     this.artista = artista;
-    this.anio = anio;
+    this.duracion = duracion;
     this.genero = genero;
   }
 
@@ -34,8 +34,8 @@ public class Cancion {
     return this.artista;
   }
   
-  public String getAnio() {
-    return this.anio;
+  public String getDuracion() {
+    return this.duracion;
   }
   
   public String getGenero() {
@@ -50,8 +50,8 @@ public class Cancion {
     this.artista = artista;
   }
   
-  public void setAnio(String anio) {
-    this.anio = anio;
+  public void setDuracion(String duracion) {
+    this.duracion = duracion;
   }
   
   public void setGenero(String genero) {
@@ -61,7 +61,7 @@ public class Cancion {
   public String getDatosCancion () {
     return "nombre: " + this.getNombre() + "\n" + 
            "artista: " + this.getArtista() + "\n" + 
-           "anio: " + this.getAnio() + "\n" + 
+           "duracion: " + this.getDuracion() + "\n" + 
            "genero: " + this.getGenero();
   }
 
@@ -81,27 +81,27 @@ public class Cancion {
   }
 
   public void llenarListaReproduccionRock() {
-    this.listaReproduccionRock.add(new Cancion("Cancion rock 1", "artista", "2022", "rock"));
-    this.listaReproduccionRock.add(new Cancion("Cancion rock 2", "artista", "2022", "rock"));
-    this.listaReproduccionRock.add(new Cancion("Cancion rock 3", "artista", "2022", "rock"));
-    this.listaReproduccionRock.add(new Cancion("Cancion rock 4", "artista", "2022", "rock"));
-    this.listaReproduccionRock.add(new Cancion("Cancion rock 5", "artista", "2022", "rock"));
+    this.listaReproduccionRock.add(new Cancion("Patience", "Guns N' Roses", "5:57", "rock"));
+    this.listaReproduccionRock.add(new Cancion("Don't Stop Me Now", "Queen", "3:33", "rock"));
+    this.listaReproduccionRock.add(new Cancion("The Sound Of Silence", "Disturbed", "4:20", "rock"));
+    this.listaReproduccionRock.add(new Cancion("The Final Countdown", "Europe", "4:57", "rock"));
+    this.listaReproduccionRock.add(new Cancion("I Was Made For Lovin' You", "KISS", "4:22", "rock"));
   }
 
   public void llenarListaReproduccionPop() {
-    this.listaReproduccionPop.add(new Cancion("Cancion pop 1", "artista", "2022", "pop"));
-    this.listaReproduccionPop.add(new Cancion("Cancion pop 2", "artista", "2022", "pop"));
-    this.listaReproduccionPop.add(new Cancion("Cancion pop 3", "artista", "2022", "pop"));
-    this.listaReproduccionPop.add(new Cancion("Cancion pop 4", "artista", "2022", "pop"));
-    this.listaReproduccionPop.add(new Cancion("Cancion pop 5", "artista", "2022", "pop"));
+    this.listaReproduccionPop.add(new Cancion("Las de la intuicion", "Shakira", "3:37", "pop"));
+    this.listaReproduccionPop.add(new Cancion("Me muero", "Carlos Rivera", "3:19", "pop"));
+    this.listaReproduccionPop.add(new Cancion("Mientes", "Camila", "3:43", "pop"));
+    this.listaReproduccionPop.add(new Cancion("Confieso", "Kany Garcia", "3:46", "pop"));
+    this.listaReproduccionPop.add(new Cancion("Sofia", "Alvaro Soler", "3:34", "pop"));
   }
 
   public void llenarListaReproduccionClasica() {
-    this.listaReproduccionClasica.add(new Cancion("Cancion clasica 1", "artista", "2022", "clasica"));
-    this.listaReproduccionClasica.add(new Cancion("Cancion clasica 2", "artista", "2022", "clasica"));
-    this.listaReproduccionClasica.add(new Cancion("Cancion clasica 3", "artista", "2022", "clasica"));
-    this.listaReproduccionClasica.add(new Cancion("Cancion clasica 4", "artista", "2022", "clasica"));
-    this.listaReproduccionClasica.add(new Cancion("Cancion clasica 5", "artista", "2022", "clasica"));
+    this.listaReproduccionClasica.add(new Cancion("Uptown Girl", "Billy Joel", "3:24", "clasica"));
+    this.listaReproduccionClasica.add(new Cancion("Imagine", "John Lennon", "3:41", "clasica"));
+    this.listaReproduccionClasica.add(new Cancion("Jailhouse Rock", "Elvis Presley", "3:36", "clasica"));
+    this.listaReproduccionClasica.add(new Cancion("You're The One That I Want", "Grease", "3:16", "clasica"));
+    this.listaReproduccionClasica.add(new Cancion("It's My Life", "Bon Jovi", "4:27", "clasica"));
   }
 
 }
