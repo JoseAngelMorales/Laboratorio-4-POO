@@ -43,12 +43,12 @@ public class Contacto {
   }
 
   public void llenarListaContactos() {
-    this.listaContactos.add(new Contacto("Contacto 1", "12345678"));
-    this.listaContactos.add(new Contacto("Contacto 2", "02345678"));
-    this.listaContactos.add(new Contacto("Contacto 3", "00345678"));
-    this.listaContactos.add(new Contacto("Contacto 4", "00045678"));
-    this.listaContactos.add(new Contacto("Contacto 5", "00005678"));
-    this.listaContactos.add(new Contacto("Contacto 6", "00000678"));
-    this.listaContactos.add(new Contacto("Contacto 7", "00000078"));
+    this.listaContactos.add(new Contacto("Ricardo Arriola", "12345678"));
+    this.listaContactos.add(new Contacto("Juan Mendez", "22347678"));
+    this.listaContactos.add(new Contacto("Bruno Diaz", "14567234"));
+    this.listaContactos.add(new Contacto("Clark Ken", "78654389"));
+    this.listaContactos.add(new Contacto("Antonio Estrellas", "12349832"));
+    this.listaContactos.add(new Contacto("Marco Antonio", "12786534"));
+    this.listaContactos.add(new Contacto("Pepe Gonzalez", "78906543"));
   }
 }
