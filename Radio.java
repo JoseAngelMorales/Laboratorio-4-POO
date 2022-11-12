@@ -1,7 +1,11 @@
+import java.util.ArrayList;
+
 public class Radio implements Acciones2 {
 
     private String frecuencia;
     private int volumen;
+    private double emisora;
+    private ArrayList<Double> listaemisora;
   
     Radio(String frecuencia) {
       this.frecuencia = frecuencia;
@@ -9,6 +13,8 @@ public class Radio implements Acciones2 {
   
     Radio() {
       this.frecuencia = "FM";
+      this.volumen = 0;
+      this.emisora = 0;
     }
   
     public void setFrecuencia(String frecuencia) {
@@ -26,6 +32,23 @@ public class Radio implements Acciones2 {
     public int getVolumen(){
         return this.volumen;
     }
+
+    public void SetEmisora(double emisora){
+        this.emisora = emisora;
+    }
+
+    public double getEmisora(){
+        return this.emisora;
+    }
+
+    public void setListaEmisoras(ArrayList<Double> listaemisora){
+        this.listaemisora = listaemisora;
+    }
+
+    public ArrayList<Double> getListaEmisoras(){
+        return this.listaemisora;
+    }
+
     //Modo radio
     public String cambiarFmAm() {
       if(this.frecuencia.equals("FM")) {

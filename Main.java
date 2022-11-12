@@ -3,16 +3,16 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        //ArrayList<Musica> playlist1 = new ArrayList<Musica>
-        //
-        //
-        //
-        //
-        //
-        //
-        //
         Radio miRadio = new Radio();
+        Cancion musica = new Cancion();
+        Contacto contactos = new Contacto();
         Scanner teclado = new Scanner(System.in);
+
+        musica.llenarListaReproduccionClasica();
+        musica.llenarListaReproduccionPop();
+        musica.llenarListaReproduccionRock();
+        contactos.llenarListaContactos();
+
         String menu1 = "\nBienvenido encienda la radio para acceder a las demas opciones\n1. Encender radio ";
         int op1 = 0;
         while(op1 != 1){
@@ -55,39 +55,56 @@ public class Main {
                                         op31 = teclado.nextInt();
                                         teclado.nextLine();
                                         if(op31 == 0){
-                                        //Radio.SetVolumen(getVolumen()+1)
+                                            if(miRadio.getVolumen()==100){
+                                                System.out.println("No se puede subir mas el volumen esta en 100.");
+                                            }
+                                            else{
+                                                miRadio.setVolumen(miRadio.getVolumen()+1);
+                                                System.out.println("Se aumento el volumen en 1.");
+                                            }
                                             }
                                         if(op31 == 0){
-                                            //Radio.SetVolumen(getVolumen()-1)
+                                            if(miRadio.getVolumen()==0){
+                                                System.out.println("No se puede bajar mas el volumen esta en 0.");
                                             }
+                                            else{
+                                                miRadio.setVolumen(miRadio.getVolumen()-1);
+                                                System.out.println("Se disminuyo el volumen en 1.");
+                                            }
+                                        }
                                         break;
                                     }
                                     case 4:{
                                         System.out.println(miRadio.cambiarFmAm());
                                         break;
                                     }
-                                    case 5:{ //Lo mismo que para el de volumen
+                                    case 5:{ //Esto hay que pasarlo al metodo de la interfaz en radio
                                         System.out.println("Desea aumentar (0) o disminuir (1) la emisora");
                                         int op32 = 0;
                                         op32 = teclado.nextInt();
                                         teclado.nextLine();
                                         if(op32 == 0){
-                                            //Radio.SetVolumen(getVolumen()+1)
+                                            miRadio.SetEmisora(miRadio.getEmisora()+0.5);
+                                            System.out.println("Se aumento la emisora en 0.5");
                                             }
                                         if(op32 == 0){
-                                            //Radio.SetVolumen(getVolumen()-1)
+                                            miRadio.SetEmisora(miRadio.getEmisora()-0.5);
+                                            System.out.println("Se disminuyo la emisora en 0.5");
                                             }
                                         break;
                                     }
                                     case 6:{
-                                        //ArrayList<int>.append(getEmisora()) Agregar la emisora actual al array que hay que tener de emisoras
+                                        ArrayList<Double> emisoras = miRadio.getListaEmisoras();
+                                        double emisora = miRadio.getEmisora();
+                                        emisoras.add(emisora);
+                                        miRadio.setListaEmisoras(emisoras);
                                         break;
                                     }
                                     case 7:{
                                         System.out.println("Que emisora desea cargar: ");
-                                        int emi = teclado.nextInt();
+                                        double emi = teclado.nextDouble();
                                         teclado.nextLine();
-                                        //Radio.SetEmisora(emi)
+                                        miRadio.SetEmisora(emi);
                                         break;
                                     }
                                 }
@@ -119,39 +136,51 @@ public class Main {
                                         op41 = teclado.nextInt();
                                         teclado.nextLine();
                                         if(op41 == 0){
-                                            //Radio.SetVolumen(getVolumen()+1)
-                                        }
+                                            if(miRadio.getVolumen()==100){
+                                                System.out.println("No se puede subir mas el volumen esta en 100.");
+                                            }
+                                            else{
+                                                miRadio.setVolumen(miRadio.getVolumen()+1);
+                                                System.out.println("Se aumento el volumen en 1.");
+                                            }
+                                            }
                                         if(op41 == 0){
-                                            //Radio.SetVolumen(getVolumen()-1)
+                                            if(miRadio.getVolumen()==0){
+                                                System.out.println("No se puede bajar mas el volumen esta en 0.");
+                                            }
+                                            else{
+                                                miRadio.setVolumen(miRadio.getVolumen()-1);
+                                                System.out.println("Se disminuyo el volumen en 1.");
+                                            }
                                         }
                                         break;
                                     }
                                     case 4:{
-                                        //for Contactos contacto | ArrayList<Contactos>
-                                            //print contacto
+                                        System.out.println(contactos.obtenerListaContactos());
                                         break;
                                     }
                                     case 5:{
                                         System.out.println("Numero del contacto que desea llamar: ");
-                                        int numero = teclado.nextInt();
-                                        teclado.nextLine();
+                                        String numero = teclado.nextLine();
                                         String ultimonom;
-                                        int ulimonum;
-                                        //for Contactos contacto | ArrayList<Contactos>
-                                            //if numero == contacto.getNumero();
-                                                //ultimonom = contacto.getNombre();
-                                                //ultimonum = contacto.getNumero();
-                                                //Esto de ultimonom y num creo que no funciona pero al menos para tener una base
-                                                //System.out.println(Llamando a contacto.getNombre()...);
+                                        String ultimonum;
+                                        for(Contacto contacto : contactos.obtenerListaContactos()){
+                                            if(numero.equals(contacto.getNumero()) == true){
+                                                ultimonom = contacto.getNombre();
+                                                ultimonum = contacto.getNumero();
+                                                //Hay que definir un atributo ultimonom en contactos o pasar esto al metodo de radio de contactos no se como
+                                                System.out.println("Llamando a contacto.getNombre()...");    
+                                            }
                                                 int resp = 0;
                                                 while(resp != 1){
                                                     System.out.println("Presione 1 para finalizar la llamada");
                                                     resp = teclado.nextInt();
                                                     teclado.nextLine();
                                                 }
+                                            }
                                     }
                                     case 6:{
-                                        //System.out.println(Llamando a ) + ultimonom;
+                                       //System.out.println(Llamando a ) + ultimonom;
                                         int resp = 0;
                                         while(resp != 1){
                                             System.out.println("Presione 1 para finalizar la llamada");
