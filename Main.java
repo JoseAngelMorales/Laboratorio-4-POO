@@ -7,6 +7,7 @@ public class Main {
         Cancion musica = new Cancion();
         Contacto contactos = new Contacto();
         Scanner teclado = new Scanner(System.in);
+        int indiceCancion = 0;
 
         musica.llenarListaReproduccionClasica();
         musica.llenarListaReproduccionPop();
@@ -49,48 +50,24 @@ public class Main {
                                         op3 = 0;
                                         break;
                                     }
-                                    case 3:{ //Todo esto podria ir en el metodo de cambiar volumen pero lo pongo aqui para tener algo de referencia
+                                    case 3:{
                                         System.out.println("Desea aumentar (0) o disminuir (1) el volumen");
                                         int op31 = 0;
                                         op31 = teclado.nextInt();
                                         teclado.nextLine();
-                                        if(op31 == 0){
-                                            if(miRadio.getVolumen()==100){
-                                                System.out.println("No se puede subir mas el volumen esta en 100.");
-                                            }
-                                            else{
-                                                miRadio.setVolumen(miRadio.getVolumen()+1);
-                                                System.out.println("Se aumento el volumen en 1.");
-                                            }
-                                            }
-                                        if(op31 == 0){
-                                            if(miRadio.getVolumen()==0){
-                                                System.out.println("No se puede bajar mas el volumen esta en 0.");
-                                            }
-                                            else{
-                                                miRadio.setVolumen(miRadio.getVolumen()-1);
-                                                System.out.println("Se disminuyo el volumen en 1.");
-                                            }
-                                        }
+                                        System.out.println(miRadio.cambiarVolumen(op31));
                                         break;
                                     }
                                     case 4:{
                                         System.out.println(miRadio.cambiarFmAm());
                                         break;
                                     }
-                                    case 5:{ //Esto hay que pasarlo al metodo de la interfaz en radio
-                                        System.out.println("Desea aumentar (0) o disminuir (1) la emisora");
-                                        int op32 = 0;
-                                        op32 = teclado.nextInt();
+                                    case 5:{
+                                        System.out.println("Desea aumentar (+) o disminuir (-) la emisora");
+                                        String op32 = "";
+                                        op32 = teclado.next();
                                         teclado.nextLine();
-                                        if(op32 == 0){
-                                            miRadio.SetEmisora(miRadio.getEmisora()+0.5);
-                                            System.out.println("Se aumento la emisora en 0.5");
-                                            }
-                                        if(op32 == 0){
-                                            miRadio.SetEmisora(miRadio.getEmisora()-0.5);
-                                            System.out.println("Se disminuyo la emisora en 0.5");
-                                            }
+                                        miRadio.cambiarEmisora(op32);
                                         break;
                                     }
                                     case 6:{
@@ -130,29 +107,12 @@ public class Main {
                                         op4 = 0;
                                         break;
                                     } 
-                                    case 3:{//Todo esto podria ir en el metodo de cambiar volumen pero lo pongo aqui para tener algo de referencia
+                                    case 3:{
                                         System.out.println("Desea aumentar (0) o disminuir (1) el volumen");
                                         int op41 = 0;
                                         op41 = teclado.nextInt();
                                         teclado.nextLine();
-                                        if(op41 == 0){
-                                            if(miRadio.getVolumen()==100){
-                                                System.out.println("No se puede subir mas el volumen esta en 100.");
-                                            }
-                                            else{
-                                                miRadio.setVolumen(miRadio.getVolumen()+1);
-                                                System.out.println("Se aumento el volumen en 1.");
-                                            }
-                                            }
-                                        if(op41 == 0){
-                                            if(miRadio.getVolumen()==0){
-                                                System.out.println("No se puede bajar mas el volumen esta en 0.");
-                                            }
-                                            else{
-                                                miRadio.setVolumen(miRadio.getVolumen()-1);
-                                                System.out.println("Se disminuyo el volumen en 1.");
-                                            }
-                                        }
+                                        System.out.println(miRadio.cambiarVolumen(op41));
                                         break;
                                     }
                                     case 4:{
@@ -168,7 +128,6 @@ public class Main {
                                             if(numero.equals(contacto.getNumero()) == true){
                                                 ultimonom = contacto.getNombre();
                                                 ultimonum = contacto.getNumero();
-                                                //Hay que definir un atributo ultimonom en contactos o pasar esto al metodo de radio de contactos no se como
                                                 System.out.println("Llamando a contacto.getNombre()...");    
                                             }
                                                 int resp = 0;
@@ -212,44 +171,80 @@ public class Main {
                                         break;
                                     }
                                     case 3:{
-                                        //System.out.print("Playlist 1")
-                                        //for Cancion cancion | Playlist 1
-                                            //System.out.print(cancion.getNombre())
-                                        //Seria algo asi para todas las playlists que hagamos
-                                        //System.out.print("Que numero de playlist desea elegir: ")
-                                        //String pl = teclado.nextInt()
-                                        //teclado.nextLine()
-                                        //switch(pl)
-                                            //Asignarle a un array vacio la playlist que escogio ya sea con un atributo extra en la clase de Cancion o aca
-                                            //Y asignarle a una variable vacia los datos de la primera cancion que este en dicha playlist y no se si aparte el numero de cancion para poder hacer lo de avanzar y retroceder
-                                            //playlistactual = Playlistx
-                                            //cancionactual = Playlistx.pos[0].getNombre()
-                                            //numcancion = 0
-                                            //Algo asi 
+                                        System.out.println("Elija una lista de reproducción\n1. Música Rock\n2. Música Pop\n3. Música Clásica");
+                                        int listaRep = 0;
+                                        listaRep = teclado.nextInt();
+                                        teclado.nextLine();
+                                        switch(listaRep) {
+                                            case 1: {
+                                                System.out.println("\n Actualmente lista de reproducción Rock \n La canción actual en reproducción es \n");
+                                                ArrayList<Cancion> cancionActual = musica.obtenerListaReproduccionRock();
+                                                musica.asignarCancionActual(cancionActual.get(indiceCancion));
+                                                System.out.println(musica.getDatosCancion());
+                                                break;
+                                            }
+                                            case 2: {
+                                                System.out.println("\n Actualmente lista de reproducción Pop \n La canción actual en reproducción es \n");
+                                                ArrayList<Cancion> cancionActual = musica.obtenerListaReproduccionPop();
+                                                musica.asignarCancionActual(cancionActual.get(indiceCancion));
+                                                System.out.println(musica.getDatosCancion());
+                                                break;
+                                            }
+                                            case 3: {
+                                                System.out.println("\n Actualmente lista de reproducción Clásica \n La canción actual en reproducción es \n");
+                                                ArrayList<Cancion> cancionActual = musica.obtenerListaReproduccionClasica();
+                                                musica.asignarCancionActual(cancionActual.get(indiceCancion));
+                                                System.out.println(musica.getDatosCancion());
+                                                break;
+                                            }
+                                        }
                                     }
                                     case 4:{
                                         System.out.println("Desea avanzar (0) o retroceder (1) la cancion: ");
                                         int canc = teclado.nextInt();
+                                        String listaActual = musica.getListaActual();
                                         if(canc == 0){
-                                            //if numcancion == playlistactual.length()-1
-                                                //numcancion = 0
-                                                //cancionactual = playlistactual.pos[0].getNombre()
-                                            //numcancion++
-                                            //cancionactual = playlistactual.posp[numcancion].getNombre()
-                                            //System.out.print("->\n" + cancionactual)
+                                            indiceCancion+=1;
+                                            if(listaActual.equals("Rock")) {
+                                                ArrayList<Cancion> cancionActual = musica.obtenerListaReproduccionRock();
+                                                musica.asignarCancionActual(cancionActual.get(indiceCancion));
+                                                System.out.println(musica.getDatosCancion());
+                                            }
+                                            if(listaActual.equals("Pop")) {
+                                                ArrayList<Cancion> cancionActual = musica.obtenerListaReproduccionPop();
+                                                musica.asignarCancionActual(cancionActual.get(indiceCancion));
+                                                System.out.println(musica.getDatosCancion());
+                                            }
+                                            if(listaActual.equals("Clasica")) {
+                                                ArrayList<Cancion> cancionActual = musica.obtenerListaReproduccionClasica();
+                                                musica.asignarCancionActual(cancionActual.get(indiceCancion));
+                                                System.out.println(musica.getDatosCancion());
+                                            }
                                         }
                                         if(canc == 1){
-                                            //if numcancion == 0
-                                                //numcancion = playlistactual.length()-1
-                                                //cancionactual = playlistactual.pos[numcancion].getNombre()
-                                            //numcancion = numcancion - 1
-                                            //cancionactual = playlistactual.pos[numcancion].getNombre()
-                                            //System.out.print("<-\n" + cancionactual)
+                                            indiceCancion-=1;
+                                            if(listaActual.equals("Rock")) {
+                                                ArrayList<Cancion> cancionActual = musica.obtenerListaReproduccionRock();
+                                                musica.asignarCancionActual(cancionActual.get(indiceCancion));
+                                                System.out.println(musica.getDatosCancion());
+                                            }
+                                            if(listaActual.equals("Pop")) {
+                                                ArrayList<Cancion> cancionActual = musica.obtenerListaReproduccionPop();
+                                                musica.asignarCancionActual(cancionActual.get(indiceCancion));
+                                                System.out.println(musica.getDatosCancion());
+                                            }
+                                            if(listaActual.equals("Clasica")) {
+                                                ArrayList<Cancion> cancionActual = musica.obtenerListaReproduccionClasica();
+                                                musica.asignarCancionActual(cancionActual.get(indiceCancion));
+                                                System.out.println(musica.getDatosCancion());
+                                            }
                                         }
+                                        break;
                                     }
                                     case 5:{
                                         System.out.println("Escuchando: ");
                                         //System.out.print(playlistactual.pos[numcancion])
+                                        break;
                                     }
                                 }
                                 
@@ -263,8 +258,12 @@ public class Main {
                             int op6 = teclado.nextInt();
                             teclado.nextLine();
                             while(op6==1){
-                                //Lo que vaya de los de las tarjetas de presentacion que no entendi
-                                
+                                switch(op6){
+                                    case 1:{
+                                        System.out.println(contactos.obtenerListaContactos());
+                                        break;
+                                    }
+                                }
                                 op6 = 0;
                             }
                             break;

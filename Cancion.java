@@ -5,6 +5,7 @@ public class Cancion {
   public String artista;
   public String duracion;
   public String genero;
+  public String listaActual;
   public ArrayList<Cancion> listaReproduccionRock;
   public ArrayList<Cancion> listaReproduccionPop;
   public ArrayList<Cancion> listaReproduccionClasica;
@@ -14,6 +15,7 @@ public class Cancion {
     this.artista = "";
     this.duracion = "";
     this.genero = "";
+    this.listaActual = "";
     this.listaReproduccionRock = new ArrayList<Cancion>();
     this.listaReproduccionPop = new ArrayList<Cancion>();
     this.listaReproduccionClasica = new ArrayList<Cancion>();
@@ -65,18 +67,36 @@ public class Cancion {
            "genero: " + this.getGenero();
   }
 
+  public String getListaActual() {
+    return this.listaActual;
+  }
+
+  public void setListaActual(String lista) {
+    this.listaActual = lista;
+  }
+
+  public void asignarCancionActual(Cancion cancion) {
+    this.setArtista(cancion.getArtista());
+    this.setDuracion(cancion.getDuracion());
+    this.setGenero(cancion.getGenero());
+    this.setNombre(cancion.getNombre());
+  }
+
   public ArrayList<Cancion> obtenerListaReproduccionRock() {
     this.llenarListaReproduccionRock();
+    this.setListaActual("Rock");
     return this.listaReproduccionRock;
   }
 
   public ArrayList<Cancion> obtenerListaReproduccionPop() {
     this.llenarListaReproduccionPop();
+    this.setListaActual("Pop");
     return this.listaReproduccionPop;
   }
 
   public ArrayList<Cancion> obtenerListaReproduccionClasica() {
     this.llenarListaReproduccionClasica();
+    this.setListaActual("Clasica");
     return this.listaReproduccionClasica;
   }
 

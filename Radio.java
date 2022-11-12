@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Radio implements Acciones2 {
+public class Radio implements Acciones {
 
     private String frecuencia;
     private int volumen;
@@ -49,6 +49,29 @@ public class Radio implements Acciones2 {
         return this.listaemisora;
     }
 
+    public String cambiarVolumen(int opcion) {
+      String resultado = "";
+      if(opcion == 0){
+        if(this.getVolumen()==100){
+          resultado = "No se puede subir mas el volumen esta en 100.";
+        }
+        else{
+            this.setVolumen(this.getVolumen()+1);
+          resultado = "Se aumento el volumen en 1.";
+        }
+      }
+      if(opcion == 1){
+        if(this.getVolumen()==0){
+          resultado = "No se puede bajar mas el volumen esta en 0.";
+        }
+        else{
+          this.setVolumen(this.getVolumen()-1);
+          resultado = "Se disminuyo el volumen en 1.";
+        }
+      }
+      return resultado;
+    }
+
     //Modo radio
     public String cambiarFmAm() {
       if(this.frecuencia.equals("FM")) {
@@ -59,7 +82,16 @@ public class Radio implements Acciones2 {
       return "La frecuencia ahora cambió a " + this.getFrecuencia();
     }
     public String cambiarEmisora(String operador) {
-      return "";
+        String texto = "";
+        if(operador.equalsIgnoreCase("+")){
+            this.SetEmisora(this.getEmisora() + 0.5);
+            texto = "Se aumento la emisora 0.5";
+        }
+        else if(operador.equalsIgnoreCase("-")){
+          this.SetEmisora(this.getEmisora() - 0.5);
+          texto = "Se disminuyó la emisora 0.5";
+        }
+        return texto + this.getEmisora() + " " + getFrecuencia();
     }
     public String guardarEmisora(String emisora) {
       return "";
